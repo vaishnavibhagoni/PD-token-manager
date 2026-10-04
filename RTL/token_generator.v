@@ -7,7 +7,7 @@ module token_generator (
 
 always @(posedge clk) begin
     if (reset) begin
-        token_number <= 8'd0;
+        token_number <= 8'd1;
     end
     else if (generate_token) begin
         if (token_number == 8'd255)
@@ -18,3 +18,4 @@ always @(posedge clk) begin
 end
 
 endmodule
+
