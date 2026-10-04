@@ -14,44 +14,47 @@ module priority_scheduler (
 
     reg [1:0] priority_count;
 
-    reg normal_dequeue_reg;
-    reg priority_dequeue_reg;
-
-    assign normal_dequeue   = normal_dequeue_reg;
-    assign priority_dequeue = priority_dequeue_reg;
-
+    /*
+     * Priority can be selected when:
+     * 1. There are priority tokens and no normal tokens, OR
+     * 2. There are priority tokens and fewer than 3 priority
+     *    tokens have been served consecutively.
+     */
     assign priority_active =
-        !priority_empty && (normal_empty || (priority_count < 2'd3));
+        !priority_empty &&
+        (normal_empty || (priority_count < 2'd3));
 
+    /*
+     * Dequeue signals are combinational.
+     * This allows token_manager to see the correct decision
+     * during the same clock cycle as serve_next.
+     */
+    assign priority_dequeue =
+        serve_next && priority_active;
+
+    assign normal_dequeue =
+        serve_next &&
+        !priority_active &&
+        !normal_empty;
+
+    /*
+     * Anti-starvation counter
+     */
     always @(posedge clk) begin
-
         if (reset) begin
             priority_count <= 2'd0;
-            normal_dequeue_reg <= 1'b0;
-            priority_dequeue_reg <= 1'b0;
         end
+        else if (serve_next) begin
 
-        else begin
+            if (priority_dequeue) begin
+                if (!normal_empty)
+                    priority_count <= priority_count + 2'd1;
+                else
+                    priority_count <= priority_count;
+            end
 
-            normal_dequeue_reg <= 1'b0;
-            priority_dequeue_reg <= 1'b0;
-
-            if (serve_next) begin
-
-                if (!priority_empty &&
-                    (normal_empty || priority_count < 2'd3)) begin
-
-                    priority_dequeue_reg <= 1'b1;
-
-                    if (!normal_empty)
-                        priority_count <= priority_count + 2'd1;
-                end
-
-                else if (!normal_empty) begin
-
-                    normal_dequeue_reg <= 1'b1;
-                    priority_count <= 2'd0;
-                end
+            else if (normal_dequeue) begin
+                priority_count <= 2'd0;
             end
         end
     end
