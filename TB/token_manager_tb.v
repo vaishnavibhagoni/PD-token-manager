@@ -266,7 +266,8 @@ $display("System Queue Full    : %s",
         add_normal_token;
         add_normal_token;
         add_normal_token;
-
+        add_normal_token;
+        add_normal_token;
         $display("Normal Queue after filling : %0d / 8", dut.normal_count);
         $display("Normal Queue Full          : %s",
                  dut.normal_full ? "YES" : "NO");
