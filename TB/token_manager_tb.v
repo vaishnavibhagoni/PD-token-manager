@@ -153,9 +153,15 @@ module token_manager_tb;
         $display("QUEUE STATUS");
         separator;
 
-        $display("Total tokens waiting : %0d", queue_count);
-        $display("Queue full           : %s",
-                 queue_full ? "YES" : "NO");
+      $display("Normal Queue         : %0d / 8", dut.normal_count);
+$display("Priority Queue       : %0d / 8", dut.priority_count);
+$display("Total tokens waiting : %0d", queue_count);
+$display("Normal Queue Full    : %s",
+         dut.normal_full ? "YES" : "NO");
+$display("Priority Queue Full  : %s",
+         dut.priority_full ? "YES" : "NO");
+$display("System Queue Full    : %s",
+         queue_full ? "YES" : "NO");
         $display("");
 
         // ==================================================
