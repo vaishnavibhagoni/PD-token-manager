@@ -158,6 +158,8 @@ $display("Priority Queue       : %0d / 8", dut.priority_count);
 $display("Total tokens waiting : %0d", queue_count);
 $display("Normal Queue Full    : %s",
          dut.normal_full ? "YES" : "NO");
+                add_normal_token;
+        $display("After 9th token attempt    : %0d / 8", dut.normal_count);
 $display("Priority Queue Full  : %s",
          dut.priority_full ? "YES" : "NO");
 $display("System Queue Full    : %s",
