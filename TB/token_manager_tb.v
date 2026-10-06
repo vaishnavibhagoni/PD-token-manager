@@ -256,7 +256,20 @@ $display("System Queue Full    : %s",
         $display("          TOKEN MANAGER TEST COMPLETED");
         $display("========================================================");
         $display("");
+              $display("");
+        $display("QUEUE FULL PROTECTION TEST");
+        $display("--------------------------------------------------------");
 
+        // Fill normal queue to capacity
+        add_normal_token;
+        add_normal_token;
+        add_normal_token;
+        add_normal_token;
+        add_normal_token;
+
+        $display("Normal Queue after filling : %0d / 8", dut.normal_count);
+        $display("Normal Queue Full          : %s",
+                 dut.normal_full ? "YES" : "NO");
         #20;
         $finish;
 
