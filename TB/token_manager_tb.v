@@ -80,19 +80,34 @@ module token_manager_tb;
         $display(" TOKEN MANAGER TEST STARTED");
         $display("========================================");
 
+        
         // Add normal tokens N1, N2, N3
-        add_normal_token;
-        add_normal_token;
-        add_normal_token;
+add_normal_token;
+$display("Added NORMAL token = 1");
 
-        // Add priority tokens P4, P5, P6, P7
-        add_priority_token;
-        add_priority_token;
-        add_priority_token;
-        add_priority_token;
+add_normal_token;
+$display("Added NORMAL token = 2");
 
-        $display("Tokens added.");
-        $display("Queue count = %0d", queue_count);
+add_normal_token;
+$display("Added NORMAL token = 3");
+
+// Add priority tokens P4, P5, P6, P7
+add_priority_token;
+$display("Added PRIORITY token = 4");
+
+add_priority_token;
+$display("Added PRIORITY token = 5");
+
+add_priority_token;
+$display("Added PRIORITY token = 6");
+
+add_priority_token;
+$display("Added PRIORITY token = 7");
+
+$display("----------------------------------------");
+$display("Tokens added.");
+$display("Queue count = %0d", queue_count);
+       
 
         // Serve several tokens
         serve_token;
