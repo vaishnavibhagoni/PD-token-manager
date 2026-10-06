@@ -109,24 +109,12 @@ $display("Tokens added.");
 $display("Queue count = %0d", queue_count);
        
 
-        // Serve several tokens
-        serve_token;
-        $display("Served token = %0d", current_token);
-
-        serve_token;
-        $display("Served token = %0d", current_token);
-
-        serve_token;
-        $display("Served token = %0d", current_token);
-
-        serve_token;
-        $display("Served token = %0d", current_token);
-
-        serve_token;
-        $display("Served token = %0d", current_token);
-
-        serve_token;
-        $display("Served token = %0d", current_token);
+        serve_token; $display("Served PRIORITY token = %0d", current_token);
+        serve_token; $display("Served PRIORITY token = %0d", current_token);
+serve_token; $display("Served PRIORITY token = %0d", current_token);
+serve_token; $display("Served NORMAL token = %0d", current_token);
+serve_token; $display("Served PRIORITY token = %0d", current_token);
+serve_token; $display("Served NORMAL token = %0d", current_token);
 
         $display("========================================");
         $display(" FINAL QUEUE COUNT = %0d", queue_count);
