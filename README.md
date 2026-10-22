@@ -2,6 +2,11 @@
 
 **Priority-Based Digital Token Management with Anti-Starvation Scheduling for VSDBabySoC**
 
+## Physical Layout
+
+![Final token manager chip layout](layout/Screenshot_2026-10-22_16-23-45.png)
+
+
 ## Project Overview
 
 This project implements a digital token management system using Verilog HDL. It is designed to manage token requests using priority-based scheduling, with an anti-starvation mechanism intended to prevent lower-priority requests from waiting indefinitely.
