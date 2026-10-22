@@ -10,10 +10,10 @@ This folder contains the scripts, results, and waveform files used to simulate a
 
 | File Name | Description |
 |---|---|
-| [`run_sim.sh`](run_sim.sh) | Shell script used to run the Verilog simulation. |
-| [`results/token_manager_simulation.log`](results/token_manager_simulation.log) | Contains simulation output and test results. |
-| [`waves/token_manager.vcd`](waves/token_manager.vcd) | Value Change Dump (VCD) file used to inspect signal changes over simulation time. |
-
+| [`run_sim.sh`](simulation/run_sim.sh) | Shell script used to run the Verilog simulation. |
+| [`results/token_manager_simulation.log`](simulation/results/token_manager_simulation.log) | Contains simulation output and test results. |
+| [`waves/token_manager.vcd`](simulation/waves/token_manager.vcd) | Value Change Dump (VCD) file used to inspect signal changes over simulation time. |
+| [`waves/waveform.png`](simulation/waves/waveform.png) | Screenshot of the GTKWave waveform showing signal transitions during simulation. |
 ## Simulation Workflow
 
 1. Compile the RTL and testbench.
