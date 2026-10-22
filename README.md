@@ -32,6 +32,19 @@ The design has been processed through the OpenROAD physical-design flow.
 - [Chip Layout Image](physical_design/layout/chip_layout.png)
 - [Physical Design Reports](physical_design/reports/)
 
+## Physical Design Area and Timing Results
+
+The design was implemented using the OpenROAD flow with the Sky130HD platform.
+
+- **Final design area:** 8,423 µm²
+- **Final utilization:** 35%
+- **Final reported TNS:** 0.00 ns
+- **Formal equivalence:** Passed — no difference was found.
+
+For detailed stage-by-stage area and timing results, see the [Physical Design Area and Timing Summary](physical_design/reports/area_summary.md).
+
+Original OpenROAD stage logs and timing reports are available in [`physical_design/reports/stages/`](physical_design/reports/stages/).
+
 ## Verification
 
 The available final logic equivalence check reports that no difference was found between the compared netlists.
