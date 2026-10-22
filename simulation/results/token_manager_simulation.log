@@ -1,0 +1,66 @@
+VCD info: dumpfile token_manager.vcd opened for output.
+
+========================================================
+       PRIORITY TOKEN MANAGEMENT SYSTEM
+       ANTI-STARVATION SCHEDULER
+========================================================
+
+TOKEN GENERATION
+--------------------------------------------------------
+Token 01 | NORMAL
+Token 02 | NORMAL
+Token 03 | NORMAL
+Token 04 | PRIORITY
+Token 05 | PRIORITY
+Token 06 | PRIORITY
+Token 07 | PRIORITY
+
+QUEUE STATUS
+--------------------------------------------------------
+Normal Queue         : 3 / 8
+Priority Queue       : 4 / 8
+Total tokens waiting : 7
+Normal Queue Full    :  NO
+After 9th token attempt    : 3 / 8
+Priority Queue Full  :  NO
+System Queue Full    :  NO
+
+SERVICE SCHEDULER
+--------------------------------------------------------
+Cycle 1 -> Token 04 | PRIORITY
+Cycle 2 -> Token 05 | PRIORITY
+Cycle 3 -> Token 06 | PRIORITY
+
+>>> ANTI-STARVATION EVENT <<<
+3 consecutive PRIORITY services reached.
+NORMAL token is selected to prevent starvation.
+
+Cycle 4 -> Token 01 | NORMAL
+Cycle 5 -> Token 07 | PRIORITY
+Cycle 6 -> Token 02 | NORMAL
+
+========================================================
+                  FINAL STATUS
+========================================================
+Tokens served        : 6
+Priority served      : 4
+Normal served        : 2
+Tokens remaining     : 1
+
+Service count check   : PASS
+Priority service     : PASS
+Normal service       : PASS
+Queue count check    : PASS
+
+Anti-starvation      : PASS
+
+========================================================
+          TOKEN MANAGER TEST COMPLETED
+========================================================
+
+
+QUEUE FULL PROTECTION TEST
+--------------------------------------------------------
+Normal Queue after filling : 8 / 8
+Normal Queue Full          : YES
+/home/vsduser/Desktop/PD-token-manager/TB/token_manager_tb.v:276: $finish called at 430000 (1ps)
