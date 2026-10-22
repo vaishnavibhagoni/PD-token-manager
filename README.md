@@ -59,3 +59,6 @@ The Value Change Dump (VCD) file contains signal transitions captured during sim
 ![GTKWave simulation waveform](simulation/waves/waveform.png)
 
 The waveform screenshot shows key signals including the clock, reset, current token, priority activity, queue count, and service completion.
+
+[Read the GTKWave Waveform Explanation](simulation/waves/waveformexplanation.md)
+
