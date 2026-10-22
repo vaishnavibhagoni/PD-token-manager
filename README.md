@@ -37,3 +37,19 @@ The design has been processed through the OpenROAD physical-design flow.
 The available final logic equivalence check reports that no difference was found between the compared netlists.
 
 
+## Simulation Results
+
+Functional simulation was performed to check the behavior of the token management system under different request and scheduling conditions.
+
+### Simulation Log
+[View Simulation Results](simulation/results/token_manager_simulation.log)
+
+The simulation log records the testbench results for token service, priority-based service, normal service, queue status, and anti-starvation test scenarios.
+
+### Simulation Waveform
+[View Simulation Waveform (VCD)](simulation/waves/token_manager.vcd)
+
+The Value Change Dump (VCD) file contains signal transitions captured during simulation. It can be opened using a waveform viewer such as GTKWave to inspect request signals, scheduler behavior, and token outputs over time.
+
+
+
