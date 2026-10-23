@@ -4,55 +4,92 @@
 
 This directory documents the physical implementation of the **Priority-Based Digital Token Management System** using the OpenROAD physical-design flow and the SkyWater SKY130HD standard-cell library.
 
-The images illustrate the final layout, standard-cell placement, clock-tree synthesis (CTS), signal routing, routing congestion, and critical-path timing analysis.
+The available images document standard-cell placement, clock-tree synthesis (CTS), signal routing, routing congestion, critical-path timing analysis, and the final layout.
 
-## 1. Final Layout
+## 1. Floorplanning
 
-![Final Layout](final_all.webp.png)
+Floorplanning establishes the initial physical organization of the design. It defines the core area, prepares the design for standard-cell placement, and establishes the physical infrastructure needed for later implementation stages.
+
+The saved floorplan database is available in the OpenROAD flow results as `2_floorplan.odb`. This is an OpenROAD database file and cannot be opened directly in KLayout as a GDSII file.
+
+### Floorplan Timing Report
+
+The report `2_floorplan_final.rpt` contains the following results:
+
+| Metric | Reported Result |
+|---|---:|
+| Total Negative Slack (TNS) | 0.00 ns |
+| Worst Negative Slack (WNS) | 0.00 ns |
+| Worst slack | 14.08 ns |
+| Minimum clock period | 2.64 ns |
+| Corresponding reported frequency | 378.46 MHz |
+| Estimated total power | 0.586 mW |
+
+These are floorplan-stage report values, not final sign-off results.
+
+**Floorplan database:** `2_floorplan.odb`
+
+*Note: A floorplan screenshot has not yet been added to this repository.*
+
+## 2. Final Layout
+
+[Open Final Layout Image](final_all.webp.png)
 
 The final layout provides an overall view of the physical implementation, including the arrangement of standard cells and routed interconnections.
 
-## 2. Standard-Cell Placement
+## 3. Standard-Cell Placement
 
-![Final Placement](final_placement.webp.png)
+[Open Final Placement Image](final_placement.webp.png)
 
 The placement view shows the locations of standard cells after placement optimization. Placement considers the available core area, timing requirements, and routing resources.
 
-## 3. Clock-Tree Synthesis (CTS)
+## 4. Clock-Tree Synthesis (CTS)
 
-![Clock Tree](final_clocks.webp.png)
+[Open Final Clock Tree Image](final_clocks.webp.png)
 
 Clock-tree synthesis constructs a clock distribution network to deliver the clock signal to sequential elements across the design.
 
 ### Clock-Tree Layout
 
-![CTS Clock Tree Layout](cts_default_core_clock_layout.webp.png)
+[Open CTS Clock Tree Layout Image](cts_default_core_clock_layout.webp.png)
 
 This view illustrates the physical arrangement of the clock-tree network within the design.
 
 ### Clock-Tree Structure
 
-![CTS Clock Tree View](cts_default_core_clock.webp.png)
+[Open CTS Clock Tree Structure Image](cts_default_core_clock.webp.png)
 
 This view provides another representation of the clock-tree structure and its connections to clock sinks.
 
-## 4. Final Signal Routing
+## 5. Final Signal Routing
 
-![Final Routing](final_routing.webp.png)
+[Open Final Routing Image](final_routing.webp.png)
 
 The final routing view illustrates the physical interconnections between cells and nets using the available routing layers.
 
-## 5. Routing Congestion Analysis
+## 6. Routing Congestion Analysis
 
-![Routing Congestion](final_congestion.webp.png)
+[Open Routing Congestion Image](final_congestion.webp.png)
 
 The congestion view helps identify regions where routing demand may be high relative to available routing resources.
 
-## 6. Critical-Path Timing Analysis
+## 7. Critical-Path Timing Analysis
 
-![Worst Timing Path](final_worst_path.webp.png)
+[Open Worst Timing Path Image](final_worst_path.webp.png)
 
 The critical-path view illustrates a path examined during timing analysis. Numerical timing conclusions should be obtained from the associated timing reports rather than inferred from the image alone.
+
+## 8. Final GDSII Layout
+
+The final GDSII layout is saved as `physical_design/layout/6_final.gds`.
+
+GDSII is a standard file format used to represent the physical geometry of an integrated-circuit layout, including shapes on different layout layers.
+
+The file can be opened using KLayout to inspect the final physical layout.
+
+[Open Final GDSII Layout File](../6_final.gds)
+
+The GDSII file represents the physical layout output. Its existence alone does not establish that Layout Versus Schematic (LVS) verification or full foundry sign-off has passed.
 
 ## Verification Status
 
@@ -68,4 +105,8 @@ These images document the physical implementation stages but do not independentl
 
 ## Conclusion
 
-These views provide a visual record of the major physical-design stages, from placement and clock distribution to routing and timing analysis. They complement the project's verification reports and document the implementation work completed so far.
+
+These resources document the major physical-design stages, from floorplanning and placement to clock distribution, routing, and timing analysis. The final GDSII layout and verification reports complement the images and provide a record of the implementation work completed so far.
+
+
+
