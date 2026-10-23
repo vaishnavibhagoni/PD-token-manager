@@ -1,42 +1,71 @@
+# Physical Design Stages and Results
 
-## Physical Design Results
+## Overview
 
-The design was implemented using the OpenROAD physical-design flow with the SkyWater SKY130HD standard-cell library. The following views illustrate the major stages and results of the implementation.
+This directory documents the physical implementation of the **Priority-Based Digital Token Management System** using the OpenROAD physical-design flow and the SkyWater SKY130HD standard-cell library.
 
-### 1. Final Layout
+The images illustrate the final layout, standard-cell placement, clock-tree synthesis (CTS), signal routing, routing congestion, and critical-path timing analysis.
+
+## 1. Final Layout
+
 ![Final Layout](final_all.webp.png)
 
-This view provides an overall visualization of the completed physical design, including the placed cells, clock network, and routing.
+The final layout provides an overall view of the physical implementation, including the arrangement of standard cells and routed interconnections.
 
-### 2. Floorplan and Placement
+## 2. Standard-Cell Placement
+
 ![Final Placement](final_placement.webp.png)
 
-This view shows the locations of standard cells after placement optimization. Placement aims to organize the cells efficiently while considering timing and routing requirements.
+The placement view shows the locations of standard cells after placement optimization. Placement considers the available core area, timing requirements, and routing resources.
 
-### 3. Clock Tree Synthesis (CTS)
+## 3. Clock-Tree Synthesis (CTS)
+
 ![Clock Tree](final_clocks.webp.png)
 
-This view illustrates the clock distribution network generated during CTS to deliver the clock signal to sequential elements with controlled timing differences.
+Clock-tree synthesis constructs a clock distribution network to deliver the clock signal to sequential elements across the design.
+
+### Clock-Tree Layout
 
 ![CTS Clock Tree Layout](cts_default_core_clock_layout.webp.png)
 
-This layout view highlights the physical arrangement of the clock-tree network within the design.
+This view illustrates the physical arrangement of the clock-tree network within the design.
+
+### Clock-Tree Structure
 
 ![CTS Clock Tree View](cts_default_core_clock.webp.png)
 
-This view focuses on the clock-tree structure and its connections to the design's clock sinks.
+This view provides another representation of the clock-tree structure and its connections to clock sinks.
 
-### 4. Final Routing
+## 4. Final Signal Routing
+
 ![Final Routing](final_routing.webp.png)
 
-This view shows the completed signal-routing stage, where interconnects are laid out to connect the design's cells and nets.
+The final routing view illustrates the physical interconnections between cells and nets using the available routing layers.
 
-### 5. Routing Congestion
+## 5. Routing Congestion Analysis
+
 ![Routing Congestion](final_congestion.webp.png)
 
-This view visualizes routing congestion, helping identify areas where routing resources are heavily utilized.
+The congestion view helps identify regions where routing demand may be high relative to available routing resources.
 
-### 6. Worst Timing Path
+## 6. Critical-Path Timing Analysis
+
 ![Worst Timing Path](final_worst_path.webp.png)
 
-This view highlights a critical timing path analyzed by the implementation flow. Timing analysis helps evaluate whether signal propagation meets the design's timing constraints.
+The critical-path view illustrates a path examined during timing analysis. Numerical timing conclusions should be obtained from the associated timing reports rather than inferred from the image alone.
+
+## Verification Status
+
+The available verification summary reports zero routing violations and a passing Logic Equivalence Check (LEC). Layout Versus Schematic (LVS) has not yet been confirmed as passing.
+
+These images document the physical implementation stages but do not independently establish LVS completion or full foundry sign-off.
+
+## Tools and Technology
+
+- **Physical-design flow:** OpenROAD
+- **Standard-cell library:** SkyWater SKY130HD
+- **Layout inspection:** KLayout
+
+## Conclusion
+
+These views provide a visual record of the major physical-design stages, from placement and clock distribution to routing and timing analysis. They complement the project's verification reports and document the implementation work completed so far.
