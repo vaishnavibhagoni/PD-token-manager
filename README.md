@@ -82,18 +82,17 @@ The design was processed through the OpenROAD physical-design flow using the Sky
 
 These values describe the current implementation flow and are not measurements from fabricated silicon or foundry sign-off results.
 
+## Repository Structure
+
+```text
 PD-token-manager/
-│
 ├── README.md
-│
 ├── About_project/
 │   └── README.md
-│
 ├── Docs/
 │   ├── README.md
 │   ├── architecture.md
 │   └── anti-starvation.md
-│
 ├── RTL/
 │   ├── README.md
 │   ├── token_manager.v
@@ -101,11 +100,9 @@ PD-token-manager/
 │   ├── priority_queue.v
 │   ├── normal_queue.v
 │   └── priority_scheduler.v
-│
 ├── TB/
 │   ├── README.md
 │   └── token_manager_tb.v
-│
 ├── simulation/
 │   ├── README.md
 │   ├── run_sim.sh
@@ -116,7 +113,6 @@ PD-token-manager/
 │       ├── waveform.png
 │       ├── waveformexplanation.md
 │       └── explanation.md
-│
 └── physical_design/
     ├── README.md
     ├── layout/
@@ -141,6 +137,7 @@ PD-token-manager/
                 ├── 4_1_cts.log
                 ├── 5_1_grt.log
                 └── 5_2_route.log
+```
 
 ## 9. Project Summary
 
