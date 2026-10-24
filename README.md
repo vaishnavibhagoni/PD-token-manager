@@ -58,6 +58,7 @@ The final logic-equivalence report states that no difference was found between t
 - OpenROAD-flow-scripts
 - Sky130HD standard-cell platform
 - KLayout
+- Magic
 - GTKWave
 - Git and GitHub
 
