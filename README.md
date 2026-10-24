@@ -55,6 +55,7 @@ The final logic-equivalence report states that no difference was found between t
 ## 6. Tools and Technologies
 
 - Verilog HDL
+- Icarus Verilog
 - OpenROAD-flow-scripts
 - Sky130HD standard-cell platform
 - KLayout
