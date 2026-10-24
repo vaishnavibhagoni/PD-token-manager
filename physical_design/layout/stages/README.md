@@ -29,7 +29,7 @@ These are floorplan-stage report values, not final sign-off results.
 
 **Floorplan database:** `2_floorplan.odb`
 
-*Note: A floorplan screenshot has not yet been added to this repository.*
+
 
 ## 2. Final Layout
 
