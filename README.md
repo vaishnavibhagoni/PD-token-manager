@@ -1,7 +1,7 @@
 # Priority-Based Digital Token Manager
 
-### Priority-Based Digital Token Management with Anti-Starvation Scheduling for VSDBabySoC
-
+### Priority-Based Digital Token Management with Anti-Starvation Scheduling 
+ 
 ## 1. Project Overview
 
 This project implements a digital token management system using Verilog HDL. It manages normal and priority token requests through separate FIFO queues and a priority-based scheduler. An anti-starvation mechanism ensures that normal requests receive service after up to three consecutive priority services when both queues contain pending requests.
@@ -55,9 +55,11 @@ The final logic-equivalence report states that no difference was found between t
 ## 6. Tools and Technologies
 
 - Verilog HDL
+- Icarus Verilog
 - OpenROAD-flow-scripts
 - Sky130HD standard-cell platform
 - KLayout
+- Magic
 - GTKWave
 - Git and GitHub
 

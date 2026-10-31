@@ -27,15 +27,9 @@ The final layout database is available as [`6_final.gds`](layout/6_final.gds).
 | Maximum fanout violations | 0 |
 | Maximum capacitance violations | 0 |
 
-*Values are taken from the available project reports. Timing values are reported by the physical design flow.*
 
-## Verification
 
-The final logic equivalence check completed with:
 
-`No difference was found.`
-
-This indicates that the compared netlists were equivalent for the checks performed. It does not by itself establish foundry signoff.
 
 ## Directory Contents
 
